@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding and responsive screen size -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>MyMovie - My Watchlist</title>
+
+    <!-- Connect external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Left Sidebar Navigation -->
+    <nav class="sidebar">
+
+        <!-- Application logo -->
+        <h2 class="sidebar-logo">MyMovie</h2>
+
+        <!-- Navigation link to Home page -->
+        <a href="index.html">
+            🏠 Home
+        </a>
+
+        <!-- Navigation link to My Watchlist page -->
+        <a href="watchlist.html" class="active">
+            🎬 My Watchlist
+        </a>
+
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="watchlistPage">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+
+            <!-- Watchlist page title -->
+            <h2>🎬 My Watchlist</h2>
+
+            <!-- Short description of the page -->
+            <p>
+                Manage your saved movies and keep track of your movie progress.
+            </p>
+
+        </section>
+
+        <!-- Saved Movies Section -->
+        <section class="watchlist-section">
+
+            <!-- Section heading -->
+            <h2>🍿 Saved Movies</h2>
+
+            <!-- Display saved movies from Local Storage -->
+            <div id="watchlistResults">
+                Loading your watchlist...
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Connect JavaScript file to handle watchlist functions -->
+    <script src="renderer.js"></script>
+
+</body>
+
+</html>

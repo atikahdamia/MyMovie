@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set character encoding and responsive screen size -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>MyMovie - Home</title>
+
+    <!-- Connect external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Left Sidebar Navigation -->
+    <nav class="sidebar">
+
+        <!-- Application logo -->
+        <h2 class="sidebar-logo">MyMovie</h2>
+
+        <!-- Navigation link to Home page -->
+        <a href="index.html" class="active">
+            🏠 Home
+        </a>
+
+        <!-- Navigation link to Watchlist page -->
+        <a href="watchlist.html">
+            🎬 My Watchlist
+        </a>
+
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Search Movies Section -->
+        <section class="search-section">
+
+            <h2>Search Movies</h2>
+
+            <!-- Search input and button -->
+            <div class="search-box">
+
+                <!-- Input for movie title -->
+                <input
+                    type="text"
+                    id="movieInput"
+                    placeholder="Enter movie title..."
+                    aria-label="Enter movie title"
+                >
+
+                <!-- Button to search movies -->
+                <button id="searchButton" type="button">
+                    🔍 Search
+                </button>
+
+            </div>
+
+            <!-- Display movie search results -->
+            <div id="movieResults" class="movie-grid"></div>
+
+        </section>
+
+        <!-- Duration Finder Section -->
+        <section class="duration-section">
+
+            <div class="duration-box">
+
+                <!-- Section heading and description -->
+                <h2>⏱️ Duration Finder</h2>
+
+                <p>
+                    Find movies that fit your available time and preferred genre.
+                </p>
+
+                <!-- Input fields for available time and movie genre -->
+                <div class="duration-inputs">
+
+                    <!-- Input for available hours -->
+                    <div class="input-group">
+
+                        <label for="durationHours">Hours</label>
+
+                        <input
+                            type="number"
+                            id="durationHours"
+                            min="0"
+                            step="1"
+                            placeholder="Enter hours"
+                        >
+
+                    </div>
+
+                    <!-- Input for available minutes -->
+                    <div class="input-group">
+
+                        <label for="durationMinutes">Minutes</label>
+
+                        <input
+                            type="number"
+                            id="durationMinutes"
+                            min="0"
+                            max="59"
+                            step="1"
+                            placeholder="Enter minutes"
+                        >
+
+                    </div>
+
+                    <!-- Dropdown to select preferred movie genre -->
+                    <div class="input-group">
+
+                        <label for="durationGenre">Movie Genre</label>
+
+                        <select id="durationGenre">
+
+                            <!-- Allow users to choose any genre -->
+                            <option value="">Any Genre</option>
+
+                            <!-- Available movie genres -->
+                            <option value="Action">Action</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Animation">Animation</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- Button to find suitable movies -->
+                <button id="durationButton" type="button">
+                    🎬 Find Movies
+                </button>
+
+                <!-- Display duration-based movie suggestions -->
+                <div id="durationResults" class="movie-grid"></div>
+
+            </div>
+
+        </section>
+
+        <!-- Explore Movies Section -->
+        <section class="explore-section">
+
+            <!-- Section heading -->
+            <h2>⭐ Explore Movies</h2>
+
+            <!-- Display popular movies retrieved from TMDb API -->
+            <div id="topRatedResults" class="movie-list">
+                Loading movies...
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Connect JavaScript file to handle application functions -->
+    <script src="renderer.js"></script>
+
+</body>
+
+</html>
+
