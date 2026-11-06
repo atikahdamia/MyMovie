@@ -1,111 +1,99 @@
 
-/* GENERAL SETTINGS */
+/* General Settings */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
 body {
-    background: #0B0B0F;
-    color: #FFFFFF;
-    padding-bottom: 20px;
+    background: #0B0B0F; color: #FFFFFF; padding-bottom: 20px;
     overflow-x: hidden;
 }
-
 p {
     line-height: 1.5;
 }
-
 h2 {
-    font-size: 22px;
-    margin-bottom: 16px;
+    font-size: 22px; margin-bottom: 16px;
 }
-
 h3 {
-    color: #F04452;
-    margin-bottom: 10px;
+    color: #F04452; margin-bottom: 10px;
 }
 
-/* LEFT SIDEBAR */
+/* Sidebar Navigation */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 220px;
-    height: 100vh;
-    padding: 30px 18px;
-    background: #101015;
-    border-right: 1px solid #303038;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 100;
+    position: fixed; top: 0; left: 0;
+    width: 220px; height: 100vh; padding: 30px 18px;
+    background: #101015; border-right: 1px solid #303038; display: flex;
+    flex-direction: column; gap: 12px; z-index: 100;
+    overflow: hidden;
 }
 
+/* Application Logo */
 .sidebar-logo {
-    font-size: 25px;
-    margin-bottom: 30px;
-    background: linear-gradient(90deg, #A31324, #F04452);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: visible;
+    flex-shrink: 0;
+}
+.sidebar-logo img {
+    display: block;
+    width: 200px;
+    max-width: none;
+    height: 150px;
+    object-fit: contain;
 }
 
+/* Sidebar Links */
 .sidebar a {
-    padding: 13px 15px;
-    color: #AAAAAA;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 7px;
+    padding: 13px 15px; color: #AAAAAA; text-decoration: none;
+    font-size: 14px; border-radius: 7px;
 }
-
 .sidebar a:hover {
-    background: #252027;
-    color: white;
+    background: #252027; color: white;
 }
-
 .sidebar a.active {
-    background: linear-gradient(135deg, #650D19, #A31324, #E04450);
-    color: white;
+    background: linear-gradient(135deg, #650D19, #A31324, #E04450); color: white;
 }
 
-/* MAIN CONTENT */
+/* Header and Main Content */
 header {
-    margin-left: 220px;
-    padding: 22px 35px;
-    background: #15151B;
+    margin-left: 220px; padding: 22px 35px; background: #15151B;
     border-bottom: 1px solid #303038;
 }
-
 header p,
 .page-heading p {
-    color: #AAAAAA;
-    margin-top: 6px;
-    font-size: 14px;
+    color: #AAAAAA; margin-top: 6px; font-size: 14px;
 }
-
 main {
-    margin-left: 220px;
-    padding: 30px 35px;
-    min-width: 0;
+    margin-left: 220px; padding: 30px 35px; min-width: 0;
     width: calc(100% - 220px);
 }
-
 section {
     margin-bottom: 35px;
 }
 
-/* SEARCH MOVIES */
+/* Search Movies Section */
+/* Search Movies Section */
 .search-section {
     text-align: center;
 }
 
+.search-section h2 {
+    width: 550px;
+    margin: 0 auto 16px;
+    text-align: center;
+    font-size: 26px;
+    transform: translateX(-30px);
+}
+
 .search-box {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
-    max-width: 550px;
+    max-width: 690px;
     margin: 0 auto 20px;
 }
 
@@ -119,365 +107,227 @@ section {
     border-radius: 6px;
     font-size: 14px;
 }
-
 input::placeholder {
     color: #888888;
 }
-
 input:focus,
 select:focus {
-    outline: none;
-    border-color: #D52B3A;
+    outline: none; border-color: #D52B3A;
 }
 
-/* BUTTONS */
+/* Buttons */
 button {
-    padding: 10px 15px;
-    color: white;
-    background: linear-gradient(135deg, #650D19, #C51F32, #F04452);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 10px 15px; color: white; background: linear-gradient(135deg, #650D19, #C51F32, #F04452);
+    border: none; border-radius: 6px; cursor: pointer;
     font-size: 14px;
 }
-
 button:hover {
     background: linear-gradient(135deg, #A31324, #F04452);
 }
-
 button:active {
     transform: scale(0.98);
 }
-
 .delete-button {
     background: linear-gradient(135deg, #650D19, #B91F30);
 }
 
-/* MOVIE CARDS */
+/* Movie Cards */
 .movie-grid,
 .movie-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
-    gap: 18px;
-    width: 100%;
-    min-width: 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 18px;
+    width: 100%; min-width: 0;
 }
-
 .movie-card {
-    width: 100%;
-    min-width: 0;
-    padding: 12px;
-    background: #19191F;
-    border: 1px solid #303038;
-    border-radius: 9px;
+    width: 100%; min-width: 0; padding: 12px;
+    background: #19191F; border: 1px solid #303038; border-radius: 9px;
     transition: border-color 0.2s;
 }
-
 .movie-card:hover {
     border-color: #A52A38;
 }
-
 .movie-card img,
 .movie-placeholder {
-    display: block;
-    width: 100%;
-    height: 235px;
+    display: block; width: 100%; height: 235px;
     border-radius: 6px;
 }
-
 .movie-card img {
-    object-fit: cover;
-    cursor: pointer;
-    transition: opacity 0.2s;
+    object-fit: contain; cursor: pointer; transition: opacity 0.2s;
+    background: #101015;
 }
-
 .movie-card img:hover {
     opacity: 0.8;
 }
-
 .movie-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: #25252C;
-    color: #AAAAAA;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; background: #25252C; color: #AAAAAA;
     font-size: 13px;
 }
-
 .movie-card h3 {
-    margin-top: 10px;
-    color: white;
-    font-size: 16px;
+    margin-top: 10px; color: white; font-size: 16px;
     overflow-wrap: anywhere;
 }
-
 .movie-card p {
-    margin-top: 6px;
-    color: #AAAAAA;
-    font-size: 13px;
+    margin-top: 6px; color: #AAAAAA; font-size: 13px;
 }
-
 .movie-card button {
-    width: 100%;
-    margin-top: 9px;
+    width: 100%; margin-top: 9px;
 }
 
-/* EXPLORE MOVIES */
+/* Explore Movies Cards */
 .movie-list .movie-card img {
-    height: 250px;
-    cursor: default;
+   height: 250px; object-fit: contain; cursor: default;
 }
-
 .movie-list .movie-card img:hover {
     opacity: 1;
 }
 
-/* MOVIE DETAILS MODAL */
+/* Movie Details Modal */
 .movie-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
-    overflow-y: auto;
+    display: none; position: fixed; inset: 0;
+    align-items: center; justify-content: center; padding: 20px;
+    background: rgba(0, 0, 0, 0.9); z-index: 1000; overflow-y: auto;
 }
-
 .movie-modal-content {
-    position: relative;
-    width: 100%;
-    max-width: 850px;
-    max-height: 85vh;
-    padding: 30px;
-    overflow-y: auto;
-    background: #19191F;
-    border: 1px solid #393941;
-    border-radius: 12px;
+    position: relative; width: 100%; max-width: 850px;
+    max-height: 85vh; padding: 30px; overflow-y: auto;
+    background: #19191F; border: 1px solid #393941; border-radius: 12px;
 }
-
 .modal-close-button {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    z-index: 2;
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 23px;
+    position: absolute; top: 12px; right: 12px;
+    z-index: 2; width: 34px; height: 34px;
+    padding: 0; display: flex; align-items: center;
+    justify-content: center; border-radius: 50%; font-size: 23px;
     line-height: 1;
 }
-
 .movie-modal-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-    width: 100%;
-    padding-top: 15px;
+    display: flex; align-items: flex-start; gap: 25px;
+    width: 100%; padding-top: 15px;
 }
-
 .movie-modal-poster {
-    width: 230px;
-    min-width: 230px;
+    width: 230px; min-width: 230px;
 }
-
 .movie-modal-poster img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
+    display: block; width: 100%; height: auto;
+    border-radius: 8px; object-fit: cover;
 }
-
 .movie-modal-info {
-    flex: 1;
-    min-width: 0;
-    padding-top: 25px;
+    flex: 1; min-width: 0; padding-top: 25px;
 }
-
 .movie-modal-info h2 {
-    color: #F04452;
-    font-size: 25px;
-    overflow-wrap: anywhere;
+    color: #F04452; font-size: 25px; overflow-wrap: anywhere;
 }
-
 .movie-modal-info p {
-    margin-bottom: 12px;
-    color: #BBBBBB;
-    line-height: 1.7;
+    margin-bottom: 12px; color: #BBBBBB; line-height: 1.7;
     overflow-wrap: anywhere;
 }
-
 .movie-modal-info strong {
     color: #FFFFFF;
 }
-
 .movie-modal-info button {
     margin-top: 12px;
 }
 
-/* DURATION FINDER */
+/* Duration Finder Section */
 .duration-box {
-    padding: 22px;
-    background: linear-gradient(135deg, #19191F, #241116);
-    border: 1px solid #42232B;
+    padding: 22px; background: linear-gradient(135deg, #19191F, #241116); border: 1px solid #42232B;
     border-radius: 10px;
 }
-
 .duration-box > p {
-    margin-bottom: 18px;
-    color: #AAAAAA;
-    font-size: 14px;
+    margin-bottom: 18px; color: #AAAAAA; font-size: 14px;
 }
-
 .duration-inputs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
+    display: flex; flex-wrap: wrap; gap: 14px;
     margin-bottom: 18px;
 }
-
 .input-group {
-    flex: 1;
-    min-width: 130px;
+    flex: 1; min-width: 130px;
 }
-
 .input-group label {
-    display: block;
-    margin-bottom: 7px;
-    color: #F04452;
+    display: block; margin-bottom: 7px; color: #F04452;
     font-size: 14px;
 }
-
 .input-group input,
 .input-group select {
-    width: 100%;
-    min-width: 0;
-    padding: 10px;
-    background: #101015;
-    color: white;
-    border: 1px solid #393941;
-    border-radius: 6px;
-    font-size: 14px;
+    width: 100%; min-width: 0; padding: 10px;
+    background: #101015; color: white; border: 1px solid #393941;
+    border-radius: 6px; font-size: 14px;
 }
-
 #durationResults {
-    width: 100%;
-    min-width: 0;
-    margin-top: 20px;
+    width: 100%; min-width: 0; margin-top: 20px;
 }
-
 #durationResults > p {
-    margin-bottom: 15px;
-    color: #AAAAAA;
+    margin-bottom: 15px; color: #AAAAAA;
 }
 
-/* WATCHLIST */
+/* Page Heading */
 .page-heading {
     margin-bottom: 25px;
 }
-
 .page-heading h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 24px; margin-bottom: 8px;
 }
 
+/* Watchlist Section */
 #watchlistResults {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    display: flex; flex-direction: column; gap: 18px;
 }
-
 .watchlist-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 22px;
-    padding: 18px;
-    background: #19191F;
-    border: 1px solid #303038;
+    display: flex; align-items: flex-start; gap: 22px;
+    padding: 18px; background: #19191F; border: 1px solid #303038;
     border-radius: 10px;
 }
-
 .watchlist-card img,
 .watchlist-card .movie-placeholder {
-    width: 125px;
-    min-width: 125px;
-    height: 180px;
+    width: 125px; min-width: 125px; height: 180px;
     border-radius: 8px;
 }
-
 .watchlist-card img {
-    object-fit: cover;
-    cursor: pointer;
+    object-fit: cover; cursor: pointer;
 }
-
 .watchlist-card img:hover {
     opacity: 0.8;
 }
-
 .watchlist-info {
-    flex: 1;
-    min-width: 0;
+    flex: 1; min-width: 0;
 }
-
 .watchlist-info h3 {
     font-size: 19px;
 }
-
 .watchlist-info p {
-    margin-bottom: 10px;
-    color: #BBBBBB;
-    font-size: 14px;
+    margin-bottom: 10px; color: #BBBBBB; font-size: 14px;
 }
-
 .watchlist-info label {
-    color: #AAAAAA;
-    font-size: 14px;
+    color: #AAAAAA; font-size: 14px;
 }
-
 .watchlist-info select {
-    display: block;
-    margin: 8px 0 12px;
-    padding: 8px;
-    background: #101015;
-    color: white;
-    border: 1px solid #393941;
+    display: block; margin: 8px 0 12px; padding: 8px;
+    background: #101015; color: white; border: 1px solid #393941;
     border-radius: 6px;
 }
 
-/* SCROLLBAR */
+/* Scrollbar */
 ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
+    width: 7px; height: 7px;
 }
-
 ::-webkit-scrollbar-track {
     background: #101015;
 }
-
 ::-webkit-scrollbar-thumb {
-    background: #70202A;
-    border-radius: 10px;
+    background: #70202A; border-radius: 10px;
 }
 
-/* RESPONSIVE DESIGN */
+/* Tablet Screen */
 @media screen and (max-width: 1000px) {
     main {
         padding: 25px;
     }
-
     .movie-grid,
     .movie-list {
         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     }
 }
 
+/* Smaller Screen */
 @media screen and (max-width: 750px) {
     .movie-grid,
     .movie-list {
@@ -485,110 +335,76 @@ button:active {
     }
 }
 
+/* Mobile Screen */
 @media screen and (max-width: 600px) {
     body {
         padding-bottom: 75px;
     }
-
     .sidebar {
-        top: auto;
-        bottom: 0;
-        width: 100%;
-        height: 65px;
-        padding: 8px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        border-top: 1px solid #303038;
+        top: auto; bottom: 0; width: 100%;
+        height: 65px; padding: 8px; flex-direction: row;
+        align-items: center; justify-content: center; border-top: 1px solid #303038;
         border-right: none;
     }
-
     .sidebar-logo {
         display: none;
     }
-
     .sidebar a {
         padding: 12px;
     }
-
     header,
     main {
-        margin-left: 0;
-        width: 100%;
+        margin-left: 0; width: 100%;
     }
-
     header {
         padding: 20px;
     }
-
     main {
         padding: 22px 15px;
     }
-
-    .search-box {
-        max-width: 100%;
+    .search-section h2 {
+        width: 100%;
+        transform: none;
     }
-
     .movie-grid,
     .movie-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
     }
-
     .movie-card img,
     .movie-placeholder {
         height: 200px;
     }
-
     .duration-inputs {
         flex-direction: column;
     }
-
     .watchlist-card {
-        gap: 13px;
-        padding: 13px;
+        gap: 13px; padding: 13px;
     }
-
     .watchlist-card img,
     .watchlist-card .movie-placeholder {
-        width: 90px;
-        min-width: 90px;
-        height: 135px;
+        width: 90px; min-width: 90px; height: 135px;
     }
-
     .watchlist-info h3 {
         font-size: 16px;
     }
-
     .watchlist-info p {
         font-size: 13px;
     }
-
     .movie-modal {
         padding: 10px;
     }
-
     .movie-modal-content {
-        max-height: 90vh;
-        padding: 18px;
+        max-height: 90vh; padding: 18px;
     }
-
     .movie-modal-layout {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
+        flex-direction: column; align-items: center; gap: 18px;
     }
-
     .movie-modal-poster {
-        width: 150px;
-        min-width: 150px;
+        width: 150px; min-width: 150px;
     }
-
     .movie-modal-info {
-        width: 100%;
-        padding-top: 10px;
+        width: 100%; padding-top: 10px;
     }
-
     .movie-modal-info h2 {
         font-size: 21px;
     }
